@@ -53,4 +53,45 @@ public class StackLL {
     }
 
 }
+class StackArray{
+    static final int MAX = 1000;
+    int[] arr = new int[MAX];
+    int top;
+    StackArray(){
+        top =-1;
+    }
+    void push(int x){
+        if(top > MAX ){
+            System.out.println("Stack Overflow");
+        }
+        arr[++top] = x;
+        System.out.println("pushed "+x);
+    }
+    void pop(){
+        if(top < 0){
+            System.out.println("Stack Underflow");
+        }
+        System.out.println("poped :"+arr[top]);
+        top--;
+    }
+    void peek(){
+        System.out.println("peek:"+arr[top]);
+    }
+    void display(){
+        for (int i = top; i >= 0; i--) {
+            System.out.print(arr[i]);
+        }
+    }
 
+    public static void main(String[] args) {
+        StackArray sa = new StackArray();
+        sa.push(1);
+        sa.push(2);
+        sa.push(3);
+        sa.push(4);
+        sa.pop();
+        sa.pop();
+        sa.push(5);
+        sa.display();
+    }
+}
