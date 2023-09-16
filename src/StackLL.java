@@ -59,6 +59,7 @@ class StackArray{
     int top;
     StackArray(){
         top =-1;
+
     }
     void push(int x){
         if(top > MAX ){
@@ -74,12 +75,12 @@ class StackArray{
         System.out.println("poped :"+arr[top]);
         top--;
     }
-    void peek(){
-        System.out.println("peek:"+arr[top]);
+    int peek(){
+        return arr[top];
     }
     void display(){
         for (int i = top; i >= 0; i--) {
-            System.out.print(arr[i]);
+            System.out.print(arr[i] +" ");
         }
     }
 
